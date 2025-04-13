@@ -1,5 +1,12 @@
 @use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
 
 .header {
-    font-size: $m-h1;
+    background-color: $bg-graphite;
+    padding: 1.5rem 1rem;
+
+    &__logo {
+        display: block;
+        margin: auto;
+    }
 }
