@@ -7,6 +7,27 @@
 
     &__logo {
         display: block;
-        margin: auto;
+        margin: 0 auto 1.5rem;
+    }
+
+    &__nav {
+        display: flex;
+    }
+
+    &__nav-link {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 2.25rem;
+        text-align: center;
+        border-radius: 1.25rem;
+        color: $secondary-cloud;
+
+        &--active {
+            background-color: $instock-black;
+            color: $white;
+        }
     }
 }
