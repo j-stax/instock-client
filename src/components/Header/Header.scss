@@ -5,13 +5,32 @@
     background-color: $bg-graphite;
     padding: 1.5rem 1rem;
 
+    @include tablet {
+        padding: 2.1875rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @include desktop {
+        padding: 2.1875rem 5.625rem;
+    }
+
     &__logo {
         display: block;
         margin: 0 auto 1.5rem;
+
+        @include tablet {
+            margin: 0;
+        }
     }
 
     &__nav {
         display: flex;
+        
+        @include tablet {
+            gap: 1.5rem;
+        }
     }
 
     &__nav-link {
@@ -24,10 +43,20 @@
         text-align: center;
         border-radius: 1.25rem;
         color: $secondary-cloud;
+        font-size: $m-h3;
 
         &--active {
             background-color: $instock-black;
             color: $white;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @include tablet {
+            padding: 0 1rem;
+            font-size: $h3;
         }
     }
 }
