@@ -21,8 +21,6 @@ export default function Header() {
         }
     })
 
-    // TODO: Tablet and Desktop view
-
     return (
         <header className="header">
             <Logo className="header__logo" />

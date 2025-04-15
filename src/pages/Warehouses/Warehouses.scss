@@ -1,0 +1,60 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.warehouses {
+    background-color: $white;
+    border-radius: 3px;
+
+    &__header {
+        padding: 2rem 1.5rem 1.5rem;
+        border-bottom: 1px solid $secondary-cloud;
+    }
+
+    &__heading {
+        margin: 0 0 1rem;
+        font-size: $m-h1;
+    }
+
+    &__search-container {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    &__search {
+        height: 2.25rem;
+        width: 100%;
+        border: 1px solid $secondary-cloud;
+        border-radius: 1.25rem;
+        padding: 0 1rem;
+
+        @include tablet {
+            height: 2.375rem;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $instock-indigo;
+        }
+    }
+
+    &__search-icon {
+        position: absolute;
+        right: 5%;
+        height: 100%;
+    }
+
+    &__add-btn {
+        height: 2.25rem;
+        width: 100%;
+        padding: 0 1rem;
+        border-radius: 1.25rem;
+        background-color: $instock-indigo;
+        border: none;
+        color: $white;
+        font-family: inherit;
+
+        @include tablet {
+            height: 2.375rem;
+        }
+    }
+}

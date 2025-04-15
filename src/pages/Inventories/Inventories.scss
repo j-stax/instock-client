@@ -1,0 +1,15 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.inventories {
+    background-color: $white;
+
+    &__heading {
+        margin: 0;
+        font-size: $m-h1;
+
+        @include tablet {
+            font-size: $h1;
+        }
+    }
+}
