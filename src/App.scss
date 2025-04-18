@@ -1,5 +1,6 @@
 @use './styles/partials/fonts' as *;
 @use './styles/partials/variables' as *;
+@use './styles/partials/mixins' as *;
 
 
 * {
@@ -16,4 +17,9 @@ body {
 main {
   padding: 0 1rem;
   background-color: $bg-light-grey;
+
+  @include tablet {
+    padding: 0 2rem;
+    position: relative;
+  }
 }

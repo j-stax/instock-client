@@ -1,0 +1,45 @@
+import './Warehouse.scss'
+import ChevronIcon from '../../assets/icons/chevron_right-24px.svg?react'
+import DelIcon from '../../assets/icons/delete_outline-24px.svg?react'
+import EditIcon from '../../assets/icons/edit-white-24px.svg?react'
+import { Link } from 'react-router-dom'
+
+export default function Warehouse({ name, address, contactName, contactInfo }) {
+    return (
+        <div className="wh-component">
+            <div className="wh-component__sections-container">
+                <div className="wh-component__left">
+                    <div className="wh-component__section">
+                        <p className="wh-component__label">WAREHOUSE</p>
+                        <h3 className="wh-component__content">
+                            <Link to="#" className="wh-component__name">
+                                {name}
+                                <ChevronIcon className="wh-component__chevron" />
+                            </Link>
+                        </h3>
+                    </div>
+                    <div className="wh-component__section">
+                        <p className="wh-component__label">ADDRESS</p>
+                        <p className="wh-component__content">{address.street}</p>
+                        <p className="wh-component__content">{`${address.city}, ${address.country}`}</p>
+                    </div>
+                </div>
+                <div className="wh-component__right">
+                    <div className="wh-component__section">
+                        <p className="wh-component__label">CONTACT NAME</p>
+                        <p className="wh-component__content">{contactName}</p>
+                    </div>
+                    <div className="wh-component__section">
+                        <p className="wh-component__label">CONTACT INFORMATION</p>
+                        <p className="wh-component__content">{contactInfo.phone}</p>
+                        <p className="wh-component__content">{contactInfo.email}</p>
+                    </div>
+                </div>
+            </div>
+            <div className="wh-component__footer">
+                <DelIcon className="wh-component__icon wh-component__icon--trash" />
+                <EditIcon className="wh-component__icon wh-component__icon--edit" />
+            </div>
+        </div>
+    )
+}
