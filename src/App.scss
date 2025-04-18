@@ -17,9 +17,9 @@ body {
 main {
   padding: 0 1rem;
   background-color: $bg-light-grey;
+  position: relative;
 
   @include tablet {
     padding: 0 2rem;
-    position: relative;
   }
 }

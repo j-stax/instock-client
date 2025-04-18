@@ -1,6 +1,7 @@
 import './App.scss'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 import Warehouses from './pages/Warehouses/Warehouses'
 import Inventories from './pages/Inventories/Inventories'
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="/inventories" element={<Inventories />} />
         </Routes>
       </main>
+      <Footer />
     </BrowserRouter>
   )
 }

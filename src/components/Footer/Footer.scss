@@ -1,0 +1,13 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.footer {
+    padding: 2.5rem 0;
+    display: flex;
+    justify-content: center;
+    background-color: $bg-light-grey;
+
+    &__copyright {
+        margin: 0;
+    }
+}
