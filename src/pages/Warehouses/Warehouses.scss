@@ -122,6 +122,11 @@
             gap: 4px;
             font-size: $h4;
             color: $secondary-slate;
+            flex: 0 1 100%;
+
+            &:last-child {
+                justify-content: flex-end;
+            }
         }
     }
 

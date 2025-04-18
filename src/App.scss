@@ -12,6 +12,10 @@ body {
   font-family: 'Titillium-Web', sans-serif;
   font-weight: 400;
   font-size: $m-p2;
+
+  @include tablet {
+    font-size: $p2;
+  }
 }
 
 main {

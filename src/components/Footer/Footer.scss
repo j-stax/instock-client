@@ -7,7 +7,20 @@
     justify-content: center;
     background-color: $bg-light-grey;
 
+    @include tablet {
+        padding: 4.375rem 0 2.5rem;
+    }
+
+    @include desktop {
+        padding: 5.9375rem 0 3rem;
+    }
+
     &__copyright {
         margin: 0;
+        font-size: $m-p3;
+
+        @include tablet {
+            font-size: $p3;
+        }
     }
 }
