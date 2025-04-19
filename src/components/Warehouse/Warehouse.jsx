@@ -50,9 +50,9 @@ export default function Warehouse({ name, address, contactName, contactInfo }) {
                         </Link>
                     </h3>
                 </div>
-                <div className="wh-component__section">
+                <div className="wh-component__section wh-component__section--address">
                     <p className="wh-component__label">ADDRESS</p>
-                    <p className="wh-component__content">{address.street}</p>
+                    <p className="wh-component__content">{address.street}<span className="wh-component__address-comma">,&nbsp; </span></p>
                     <p className="wh-component__content">{`${address.city}, ${address.country}`}</p>
                 </div>
                 <div className="wh-component__section">

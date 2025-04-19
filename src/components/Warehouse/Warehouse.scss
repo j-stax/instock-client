@@ -9,6 +9,10 @@
         padding: 1rem 2rem;
     }
 
+    @include desktop {
+        padding: 1rem 2.5rem;
+    }
+
     &__sections-container {
 
         &--mobile {
@@ -48,6 +52,12 @@
         @include tablet {
             width: 100%;
         }
+
+        &--address {
+            @include desktop {
+                display: flex;
+            }
+        }
     }
 
     &__label {
@@ -68,6 +78,14 @@
         align-items: center;
         text-decoration: none;
         color: $instock-indigo;
+    }
+
+    &__address-comma {
+        display: none;
+
+        @include desktop {
+            display: initial;
+        }
     }
 
     &__footer {
