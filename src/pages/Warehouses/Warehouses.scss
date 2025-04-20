@@ -25,6 +25,8 @@
 
         @include desktop {
             padding: 2rem 2.5rem 1.5rem;
+            left: 8.125rem;
+            right: 8.125rem;
         }
     }
 
@@ -75,6 +77,10 @@
             height: 2.375rem;
             width: 11.56rem;
             font-size: $p2;
+        }
+
+        @include desktop {
+            width: 17.125rem;
         }
 
         &:focus {

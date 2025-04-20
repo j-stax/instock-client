@@ -4,7 +4,6 @@ import SortIcon from '../../assets/icons/sort-24px.svg?react'
 import Warehouse from '../../components/Warehouse/Warehouse'
 
 export default function Warehouses() {
-    //TODO: WAREHOUSE COMPONENT STARTING FROM MOBILE VIEW
     return (
         <div className="warehouses">
             <div className="warehouses__header">
