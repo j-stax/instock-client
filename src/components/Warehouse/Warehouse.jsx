@@ -3,10 +3,24 @@ import ChevronIcon from '../../assets/icons/chevron_right-24px.svg?react'
 import DelIcon from '../../assets/icons/delete_outline-24px.svg?react'
 import EditIcon from '../../assets/icons/edit-white-24px.svg?react'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import DeleteModal from '../Modal/DeleteModal'
 
-export default function Warehouse({ name, address, contactName, contactInfo }) {
+export default function Warehouse({ id, name, address, contactName, contactInfo }) {
+    const [isOpen, setIsOpen] = useState(false)
+
+    const openModal = () => setIsOpen(true)
+    const closeModal = () => setIsOpen(false)
+
     return (
         <div className="wh-component">
+            <DeleteModal 
+                isOpen={isOpen} 
+                closeModal={closeModal} 
+                id={id} 
+                name={name}
+                type="warehouses"
+            />
             <div className="wh-component__sections-container wh-component__sections-container--mobile">
                 <div className="wh-component__left">
                     <div className="wh-component__section">
@@ -37,7 +51,7 @@ export default function Warehouse({ name, address, contactName, contactInfo }) {
                 </div>
             </div>
             <div className="wh-component__footer wh-component__footer--mobile">
-                <DelIcon className="wh-component__icon wh-component__icon--trash" />
+                <DelIcon className="wh-component__icon wh-component__icon--trash" onClick={openModal} />
                 <EditIcon className="wh-component__icon wh-component__icon--edit" />
             </div>
             <div className="wh-component__sections-container wh-component__sections-container--tablet">
@@ -65,7 +79,7 @@ export default function Warehouse({ name, address, contactName, contactInfo }) {
                     <p className="wh-component__content">{contactInfo.email}</p>
                 </div>
                 <div className="wh-component__footer wh-component__footer--tablet">
-                    <DelIcon className="wh-component__icon wh-component__icon--trash" />
+                    <DelIcon className="wh-component__icon wh-component__icon--trash" onClick={openModal} />
                     <EditIcon className="wh-component__icon wh-component__icon--edit" />
                 </div>
             </div>

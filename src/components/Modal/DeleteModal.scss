@@ -1,0 +1,55 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.delete-modal {
+    background-color: $white;
+    outline: none;
+    height: 100%;
+    padding: 3.75rem 1rem 1.5rem;
+    position: relative;
+
+    &__close-icon {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+    
+    &__heading {
+        margin: 0 0 1rem;
+        font-size: $m-h1;
+        width: 80%;
+    }
+
+    &__footer {
+        position: absolute;
+        bottom: 1.5rem;
+        right: 1rem;
+        left: 1rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__button {
+        padding: 0.5rem 0;
+        font-family: inherit;
+        width: 100%;
+        font-size: $m-h3;
+        border-radius: 1.25rem;
+        border: none;
+
+        @include tablet {
+            font-size: $h3;
+        }
+
+        &--cxl {
+            background-color: $white;
+            border: 1px solid $secondary-cloud;
+            color: $secondary-slate;
+        }
+
+        &--delete {
+            background-color: $red;
+            color: $white;
+        }
+    }
+}

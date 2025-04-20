@@ -37,7 +37,8 @@ export default function Warehouses() {
                     ACTIONS
                 </span>  
             </div>
-            <Warehouse 
+            <Warehouse
+                id={1} 
                 name="Manhattan"
                 address={{ street: "503 Broadway", city: "New York", country: "USA" }}
                 contactName="Parmin Aujla"
