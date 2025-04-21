@@ -2,10 +2,12 @@ import './DeleteModal.scss'
 import Modal from 'react-modal'
 import CloseIcon from '../../assets/icons/close-24px.svg?react'
 import axios from 'axios'
+import { useState } from 'react'
 
 const API_URL = import.meta.env.VITE_APP_API_URL
 
 export default function DeleteModal({ isOpen, closeModal, id, name, type }) {
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
     const handleDelete = async () => {
         try {
@@ -17,18 +19,23 @@ export default function DeleteModal({ isOpen, closeModal, id, name, type }) {
         }
     }
 
+    window.addEventListener("resize", () => setScreenWidth(window.innerWidth))
+
     return (
-        <Modal className="delete-modal" isOpen={isOpen}>
-            <CloseIcon className="delete-modal__close-icon" />
-            <h1 className="delete-modal__heading">{`Delete ${name} Warehouse?`}</h1>
-            <p className="delete-modal__body">
-                {`Please confirm that you'd like to delete ${name} from the list of ${type}.
-                You won't be able to undo this action.`} 
-            </p>
-            <div className="delete-modal__footer">
-                <button className="delete-modal__button delete-modal__button--cxl" onClick={closeModal}>Cancel</button>
-                <button className="delete-modal__button delete-modal__button--delete" onClick={handleDelete}>Delete</button>
-            </div>
-        </Modal>
+        <div className="modal-wrapper">
+            <div className={screenWidth >= 768 && isOpen ? "modal-backdrop" : "hidden"}></div>
+            <Modal className="delete-modal" isOpen={isOpen}>
+                <CloseIcon className="delete-modal__close-icon" onClick={closeModal} />
+                <h1 className="delete-modal__heading">{`Delete ${name} Warehouse?`}</h1>
+                <p className="delete-modal__body">
+                    {`Please confirm that you'd like to delete ${name} from the list of ${type}.
+                    You won't be able to undo this action.`} 
+                </p>
+                <div className="delete-modal__footer">
+                    <button className="delete-modal__button delete-modal__button--cxl" onClick={closeModal}>Cancel</button>
+                    <button className="delete-modal__button delete-modal__button--delete" onClick={handleDelete}>Delete</button>
+                </div>
+            </Modal>
+        </div>
     )
 }
