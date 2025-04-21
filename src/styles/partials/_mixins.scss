@@ -12,3 +12,7 @@
         @content;
     }
 }
+
+@mixin move-animation {
+    transform: translate(4px);
+}

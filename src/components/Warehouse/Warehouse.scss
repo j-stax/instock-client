@@ -80,6 +80,14 @@
         color: $instock-indigo;
     }
 
+    &__chevron {
+        transition: transform 0.2s;
+
+        &:hover {
+            @include move-animation;
+        }
+    }
+
     &__address-comma {
         display: none;
 
