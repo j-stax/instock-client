@@ -30,8 +30,12 @@
     @include tablet {
         width: 90%;
         height: 16.375rem;
-        margin: 23% auto 0;
+        margin: 12rem auto 0;
         padding: 2.5rem 4rem;
+    }
+
+    @include desktop {
+        width: 55%;
     }
 
     &__close-icon {
@@ -55,6 +59,7 @@
 
         @include tablet {
             font-size: $p1;
+            padding-right: 20%;
         }
     }
 
