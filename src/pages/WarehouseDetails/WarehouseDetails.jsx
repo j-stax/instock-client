@@ -35,7 +35,12 @@ export default function WarehouseDetails() {
                     </div>
                 </div>
             </div>
-            <InventoryItem />
+            <InventoryItem
+                item="Television"
+                status="In stock"
+                category="Electronics"
+                quantity={500}
+            />
         </div>
     )
 }
