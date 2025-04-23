@@ -1,0 +1,53 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.inventory-item {
+    padding: 1rem 1.5rem 1.5rem;
+    background-color: $white;
+    border-top: 1px solid $secondary-cloud;
+
+    &__upper-container {
+        display: flex;
+        margin-bottom: 1.25rem;
+    }
+
+    &__section {
+        flex: 0 1 50%;
+    }
+
+    &__label {
+        margin: 0 0 4px;
+        color: $secondary-slate;
+        font-size: $m-h4;
+    }
+
+    &__content {
+        margin: 0;
+
+        &--name {
+            font-size: $m-h3;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: $instock-indigo;
+    }
+
+    &__status {
+        margin: 0;
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        border-radius: 1.25rem;
+        background-color: $bg-light-grey;
+        color: $green;
+        font-size: $m-h4;
+    }
+
+    &__lower-container {
+        display: flex;
+        margin-bottom: 1rem;
+    }
+}

@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Warehouses from './pages/Warehouses/Warehouses'
+import WarehouseDetails from './pages/WarehouseDetails/WarehouseDetails'
 import Inventories from './pages/Inventories/Inventories'
 
 Modal.setAppElement("#root")
@@ -14,7 +15,8 @@ function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<Warehouses />} />
+          <Route path="/" element={<WarehouseDetails />} />
+          <Route path="/warehouses/:id" element={<WarehouseDetails />} />
           <Route path="/inventories" element={<Inventories />} />
         </Routes>
       </main>

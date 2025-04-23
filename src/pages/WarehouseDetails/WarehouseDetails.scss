@@ -1,0 +1,78 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.wh-details {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 0 5px 9px -1px rgba(0, 0, 0, 0.25);
+
+    &__header-wrapper {
+        position: relative;
+        height: 1.5rem;
+        background-color: $white;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $white;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        padding: 2rem 1.5rem 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 1rem;
+    }
+
+    &__heading-container {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    &__heading {
+        font-size: $m-h1;
+        margin: 0;
+    }
+
+
+    &__edit-icon-container {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 1.25rem;
+        background-color: $instock-indigo;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__component {
+        border-top: 1px solid $secondary-cloud;
+        background-color: $white;
+        padding: 1rem 1.5rem;
+    }
+
+    &__address {
+        margin-bottom: 2.25rem;
+    }
+
+    &__label {
+        margin: 0 0 4px;
+        font-size: $m-h4;
+        color: $secondary-slate;
+    }
+
+    &__content {
+        margin: 0;
+    }
+
+    &__contact-container {
+        display: flex;
+    }
+
+    &__contact {
+        flex: 0 1 50%;
+    }
+}
