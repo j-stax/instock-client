@@ -6,6 +6,16 @@
     background-color: $white;
     border-top: 1px solid $secondary-cloud;
 
+    @include tablet {
+        padding: 1rem 2rem;
+    }
+
+    &__mobile {
+        @include tablet {
+            display: none;
+        }
+    }
+
     &__upper-container {
         display: flex;
         margin-bottom: 1.25rem;
@@ -13,12 +23,20 @@
 
     &__section {
         flex: 0 1 50%;
+
+        @include tablet {
+            flex: 0 1 100%;
+        }
     }
 
     &__label {
         margin: 0 0 4px;
         color: $secondary-slate;
         font-size: $m-h4;
+
+        @include tablet {
+            font-size: $h4;
+        }
     }
 
     &__content {
@@ -26,6 +44,10 @@
 
         &--name {
             font-size: $m-h3;
+
+            @include tablet {
+                font-size: $h3;
+            }
         }
     }
 
@@ -34,6 +56,10 @@
         align-items: center;
         text-decoration: none;
         color: $instock-indigo;
+
+        @include tablet {
+            flex: 0 1 100%;
+        }
     }
 
     &__status {
@@ -44,6 +70,10 @@
         background-color: $bg-light-grey;
         color: $green;
         font-size: $m-h4;
+
+        @include tablet {
+            font-size: $h4;
+        }
     }
 
     &__lower-container {
@@ -54,5 +84,17 @@
     &__buttons {
         display: flex;
         justify-content: space-between;
+
+        @include tablet {
+            justify-content: initial;
+            gap: 1rem;
+        }
+    }
+
+    &__tablet {
+        @include tablet {
+            display: flex;
+            align-items: center;
+        }
     }
 }

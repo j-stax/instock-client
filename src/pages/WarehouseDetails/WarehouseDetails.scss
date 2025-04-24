@@ -10,6 +10,10 @@
         position: relative;
         height: 1.5rem;
         background-color: $white;
+
+        @include tablet {
+            height: 0;
+        }
     }
 
     &__header {
@@ -24,6 +28,11 @@
         left: 0;
         right: 0;
         bottom: 1rem;
+
+        @include tablet {
+            padding: 2rem;
+            bottom: 0;
+        }
     }
 
     &__heading-container {
@@ -35,6 +44,10 @@
     &__heading {
         font-size: $m-h1;
         margin: 0;
+
+        @include tablet {
+            font-size: $h1;
+        }
     }
 
 
@@ -48,31 +61,102 @@
         align-items: center;
     }
 
-    &__component {
+    &__warehouse {
         border-top: 1px solid $secondary-cloud;
         background-color: $white;
         padding: 1rem 1.5rem;
+
+        @include tablet {
+            padding: 1.5rem 2rem;
+            display: flex;
+        }
     }
 
     &__address {
         margin-bottom: 2.25rem;
+
+        @include tablet {
+            margin-right: 2rem;
+            width: 35%;
+        }
     }
 
     &__label {
         margin: 0 0 4px;
         font-size: $m-h4;
         color: $secondary-slate;
+
+        @include tablet {
+            font-size: $h4;
+        }
     }
 
     &__content {
         margin: 0;
+
+        &--address {
+            @include tablet {
+                display: flex;
+                flex-direction: column;
+            }
+        }
     }
 
     &__contact-container {
         display: flex;
+
+        @include tablet {
+            border-left: 1px solid $secondary-cloud;
+            padding-left: 2.5rem;
+            gap: 2rem;
+        }
     }
 
     &__contact {
         flex: 0 1 50%;
+
+        &--info {
+            @include tablet {
+                width: 10rem;
+            }
+        }
+    }
+
+    &__sort-bar {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: $bg-light-grey;
+            padding: 0.75rem 2rem;
+        }
+    }
+
+    &__sort-bar-type {
+        @include tablet {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            color: $secondary-slate;
+            flex: 0 1 100%;
+            font-size: $h4;
+        }
+    }
+
+    &__sort-icon {
+        @include tablet {
+            margin-left: 4px;
+        }
+    }
+
+    &__sort-bar-actions {
+        @include tablet {
+            margin: 0;
+            color: $secondary-slate;
+            padding-left: 1rem;
+            font-size: $h4;
+        }
     }
 }
