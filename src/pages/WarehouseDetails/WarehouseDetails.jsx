@@ -3,8 +3,14 @@ import ArrowBackIcon from '../../assets/icons/arrow_back-24px.svg?react'
 import EditWhiteIcon from '../../assets/icons/edit-white-24px.svg?react'
 import InventoryItem from '../../components/InventoryItem/InventoryItem'
 import SortIcon from '../../assets/icons/sort-24px.svg?react'
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
 export default function WarehouseDetails() {
+    const [warehouse, setWarehouse] = useState({})
+    const { id} = useParams()
+
+
     return (
         <div className="wh-details">
             <div className="wh-details__header-wrapper">

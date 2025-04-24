@@ -30,8 +30,12 @@
         bottom: 1rem;
 
         @include tablet {
-            padding: 2rem;
+            padding: 2rem 2rem 1.4375rem;
             bottom: 0;
+        }
+
+        @include desktop {
+            padding: 2rem 2.5rem 1.4375rem;
         }
     }
 
@@ -70,12 +74,17 @@
             padding: 1.5rem 2rem;
             display: flex;
         }
+
+        @include desktop {
+            padding: 1.5rem 2.5rem;
+        }
     }
 
     &__address {
         margin-bottom: 2.25rem;
 
         @include tablet {
+            margin-bottom: 0;
             margin-right: 2rem;
             width: 35%;
         }
@@ -108,18 +117,13 @@
         @include tablet {
             border-left: 1px solid $secondary-cloud;
             padding-left: 2.5rem;
-            gap: 2rem;
+            gap: 1.5rem;
+            width: 65%;
         }
     }
 
     &__contact {
         flex: 0 1 50%;
-
-        &--info {
-            @include tablet {
-                width: 10rem;
-            }
-        }
     }
 
     &__sort-bar {
@@ -131,6 +135,10 @@
             justify-content: space-between;
             background-color: $bg-light-grey;
             padding: 0.75rem 2rem;
+        }
+
+        @include desktop {
+            padding: 0.75rem 2.5rem;
         }
     }
 

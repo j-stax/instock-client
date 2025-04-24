@@ -7,8 +7,6 @@ import EditIcon from '../../assets/icons/edit-24px.svg?react'
 
 export default function InventoryItem({ item, status, category, quantity }) {
 
-    //TODO: ADD NEW SET OF INVENTORY CONTENT FOR MOBILE (NO LABELS)
-
     return (
         <div className="inventory-item">
             <div className="inventory-item__mobile">
