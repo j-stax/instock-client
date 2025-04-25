@@ -78,6 +78,10 @@
         @include tablet {
             font-size: $h4;
         }
+
+        &--red {
+            color: $red;
+        }
     }
 
     &__lower-container {

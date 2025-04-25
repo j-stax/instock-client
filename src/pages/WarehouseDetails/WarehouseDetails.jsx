@@ -65,7 +65,7 @@ export default function WarehouseDetails() {
             </div>
             <InventoryItem
                 item="Television"
-                status="In stock"
+                status="Out of Stock"
                 category="Electronics"
                 quantity={500}
             />
