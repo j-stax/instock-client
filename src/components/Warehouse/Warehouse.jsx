@@ -36,7 +36,11 @@ export default function Warehouse({ id, name, address, contactName, contactInfo 
                     <div className="wh-component__section">
                         <p className="wh-component__label">WAREHOUSE</p>
                         <h3 className="wh-component__content">
-                            <Link to="#" className="wh-component__name">
+                            <Link to="#" 
+                                className="wh-component__name"
+                                onMouseEnter={handleLinkMouseEnter}
+                                onMouseOut={handleLinkMouseOut}
+                            >
                                 {name}
                                 <ChevronIcon className="wh-component__chevron" />
                             </Link>
@@ -70,7 +74,7 @@ export default function Warehouse({ id, name, address, contactName, contactInfo 
                     <h3 className="wh-component__content">
                         <Link to="#" 
                             className="wh-component__name" 
-                            onMouseOver={handleLinkMouseEnter} 
+                            onMouseEnter={handleLinkMouseEnter} 
                             onMouseOut={handleLinkMouseOut}
                         >
                             {name}
