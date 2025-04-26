@@ -36,6 +36,8 @@ export default function WarehouseForm({ pageTitle, submitBtnLabel, handleApi, fe
         contact_email: contactEmailRef
     }
 
+    //TODO: FIX POSITIONING ON HEADER for Tablet+
+
     useEffect(() => {
         async function setFormFields() {
             const data = await fetchWarehouse()
@@ -81,16 +83,18 @@ export default function WarehouseForm({ pageTitle, submitBtnLabel, handleApi, fe
 
     return (
         <div className="warehouse-form">
-            <div className="warehouse-form__header-container">
-                <Link to="#" className="warehouse-form__back-arrow" onClick={goBack}>
-                    <ArrowBackIcon />
-                </Link>
-                <h1 className="warehouse-form__header">{pageTitle}</h1>
+            <div className="warehouse-form__header-wrapper">
+                <div className="warehouse-form__header">
+                    <Link to="#" className="warehouse-form__back-arrow" onClick={goBack}>
+                        <ArrowBackIcon />
+                    </Link>
+                    <h1 className="warehouse-form__heading">{pageTitle}</h1>
+                </div>
             </div>
             <form className="warehouse-form__form" onSubmit={handleSubmit}>
                 <div className="warehouse-form__form-body">
                     <div className="warehouse-form__wh-details-container">
-                        <h2 className="warehouse-form__wh-details-header">Warehouse Details</h2>
+                        <h2 className="warehouse-form__wh-details-heading">Warehouse Details</h2>
                         <div className="warehouse-form__wh-details">
                             <TextField 
                                 inputs={inputs}

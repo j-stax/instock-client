@@ -11,7 +11,7 @@ export default function Header() {
     const inventoriesLinkRef = useRef(null)
     
     useEffect(() => {
-        if (currentPath === "/") {
+        if (currentPath.includes("warehouses")) {
             warehouseLinkRef.current.classList.add("header__nav-link--active")
             inventoriesLinkRef.current.classList.remove("header__nav-link--active")
         } 

@@ -36,7 +36,7 @@ export default function Warehouse({ id, name, address, contactName, contactInfo 
                     <div className="wh-component__section">
                         <p className="wh-component__label">WAREHOUSE</p>
                         <h3 className="wh-component__content">
-                            <Link to="#" 
+                            <Link to={`/warehouses/${id}`} 
                                 className="wh-component__name"
                                 onMouseOver={handleLinkMouseOver}
                                 onMouseOut={handleLinkMouseOut}
@@ -72,7 +72,7 @@ export default function Warehouse({ id, name, address, contactName, contactInfo 
                 <div className="wh-component__section">
                     <p className="wh-component__label">WAREHOUSE</p>
                     <h3 className="wh-component__content">
-                        <Link to={`/${id}`} 
+                        <Link to={`/warehouses/${id}`} 
                             className="wh-component__name" 
                             onMouseOver={handleLinkMouseOver} 
                             onMouseOut={handleLinkMouseOut}

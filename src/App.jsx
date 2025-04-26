@@ -1,6 +1,6 @@
 import './App.scss'
 import Modal from 'react-modal'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Warehouses from './pages/Warehouses/Warehouses'
@@ -18,7 +18,8 @@ function App() {
       <main>
         <Routes>
           {/* <Route path="/" element={<WarehouseDetails />} /> */}
-          <Route path="/" element={<Warehouses />} />
+          <Route path="/" element={<Navigate to="/warehouses" />} />
+          <Route path="/warehouses" element={<Warehouses />} />
           <Route path="/warehouses/:id" element={<WarehouseDetails />} />
           <Route path="/warehouses/:id/add" element={<AddNewWarehouse />} />
           <Route path="/warehouses/:id/edit" element={<EditWarehouse />} />
