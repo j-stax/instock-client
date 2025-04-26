@@ -12,6 +12,16 @@ export default function Warehouse({ id, name, address, contactName, contactInfo 
     const openModal = () => setIsOpen(true)
     const closeModal = () => setIsOpen(false)
 
+    const handleLinkMouseEnter = (e) => {
+        const chevron = e.target.children[0]
+        chevron.classList.add("wh-component__chevron--hover")
+    }
+
+    const handleLinkMouseOut = (e) => {
+        const chevron = e.target.children[0]
+        chevron.classList.remove("wh-component__chevron--hover")
+    }
+ 
     return (
         <div className="wh-component">
             <DeleteModal 
@@ -58,7 +68,11 @@ export default function Warehouse({ id, name, address, contactName, contactInfo 
                 <div className="wh-component__section">
                     <p className="wh-component__label">WAREHOUSE</p>
                     <h3 className="wh-component__content">
-                        <Link to="#" className="wh-component__name">
+                        <Link to="#" 
+                            className="wh-component__name" 
+                            onMouseOver={handleLinkMouseEnter} 
+                            onMouseOut={handleLinkMouseOut}
+                        >
                             {name}
                             <ChevronIcon className="wh-component__chevron" />
                         </Link>

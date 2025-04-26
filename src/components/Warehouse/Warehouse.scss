@@ -83,7 +83,7 @@
     &__chevron {
         transition: transform 0.2s;
 
-        &:hover {
+        &--hover {
             @include move-animation;
         }
     }

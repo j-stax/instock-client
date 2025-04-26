@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     background-color: $bg-light-grey;
+    color: $secondary-slate;
 
     @include tablet {
         padding: 4.375rem 0 2.5rem;
