@@ -12,7 +12,7 @@ export default function Warehouse({ id, name, address, contactName, contactInfo 
     const openModal = () => setIsOpen(true)
     const closeModal = () => setIsOpen(false)
 
-    const handleLinkMouseEnter = (e) => {
+    const handleLinkMouseOver = (e) => {
         const chevron = e.target.children[0]
         chevron.classList.add("wh-component__chevron--hover")
     }
@@ -38,7 +38,7 @@ export default function Warehouse({ id, name, address, contactName, contactInfo 
                         <h3 className="wh-component__content">
                             <Link to="#" 
                                 className="wh-component__name"
-                                onMouseEnter={handleLinkMouseEnter}
+                                onMouseOver={handleLinkMouseOver}
                                 onMouseOut={handleLinkMouseOut}
                             >
                                 {name}
@@ -74,7 +74,7 @@ export default function Warehouse({ id, name, address, contactName, contactInfo 
                     <h3 className="wh-component__content">
                         <Link to="#" 
                             className="wh-component__name" 
-                            onMouseEnter={handleLinkMouseEnter} 
+                            onMouseOver={handleLinkMouseOver} 
                             onMouseOut={handleLinkMouseOut}
                         >
                             {name}
