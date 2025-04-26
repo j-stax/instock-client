@@ -1,0 +1,64 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.textField {
+    &__label {
+        font-size: $m-h3;
+        font-weight: 600;
+    
+        @include tablet {
+            font-size: $h3;
+        }
+    }
+
+    &__input {
+        display: block;
+        margin-top: 4px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 1rem;
+        font-family: inherit;
+        font-size: $m-p2;
+        border-radius: 1.25rem;
+        border: 1px solid $secondary-cloud;
+        height: 2.25rem;
+        margin-bottom: 4px;
+
+        &:focus {
+            outline: none;
+            border-color: $instock-indigo;
+        }
+
+        &--error {
+            border-color: $red;
+        }
+
+        @include tablet {
+            height: 2.375rem;
+            font-size: $p2;
+        }
+    }
+
+    &__error-msg {
+        font-size: $m-p3;
+        display: flex;
+        align-items: center;
+        color: $red;
+
+        @include tablet {
+            font-size: $p3;
+        }
+    }
+
+    &__error-icon {
+        width: 0.9rem;
+
+        @include tablet {
+            width: 1rem;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}

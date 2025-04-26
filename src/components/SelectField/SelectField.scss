@@ -1,0 +1,89 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.select-field {
+
+    &__label {
+        font-size: $m-h3;
+        font-weight: 600;
+
+        @include tablet {
+            font-size: $h3;
+        }
+    }
+
+    &__input-wrapper {
+        position: relative;
+    }
+
+    &__input {
+        display: block;
+        margin-block: 4px;
+        font-size: $m-p2-size;
+        font-family: "Titillium-Web";
+        width: 100%;
+        height: 2.25rem;
+        border-radius: 1.25rem;
+        border: 1px solid $secondary-cloud;
+        padding: 0 1rem;
+        appearance: none;
+
+        &--error {
+            border-color: $red;
+        }
+
+        &--default {
+            color: $secondary-slate;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $instock-indigo;
+        }
+
+        @include tablet {
+            font-size: $p2;
+            height: 2.375rem;
+        }
+    }
+
+    &__input-placeholder {
+        color: $secondary-slate;
+    }
+
+    &__arrow-down {
+        position: absolute;
+        top: 15%;
+        right: 5%;
+
+        @include tablet {
+            right: 2.5%;
+        }
+    }
+
+    &__option {
+        color: $instock-black;
+    }
+
+    &__error-icon {
+        width: 1rem;
+    }
+
+    &__error-msg {
+        font-size: $m-p3;
+        font-weight: 400;
+        color: $red;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        @include tablet {
+            font-size: $m-p3;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,172 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.warehouse-form {
+    background-color: $white;
+
+    &__header-container {
+        padding: 2rem 0 1.5rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-bottom: 1px solid $secondary-cloud;
+
+        @include tablet {
+            padding: 2rem 0 1.3rem 2rem;
+        }
+    }
+
+    &__back-arrow {
+        display: flex;
+    }
+
+    &__header {
+        font-size: $m-h1;
+
+        @include tablet {
+            font-size: $h1;
+        }
+    }
+
+    &__form {
+        padding: 1rem 1.5rem 0;
+
+        @include tablet {
+            padding: 0;
+        }
+    }
+
+    &__form-body {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        @include desktop {
+            padding: 1.5rem 2.5rem 2rem;
+        }
+    }
+
+    &__wh-details-container {
+        @include tablet {
+            flex: 0 1 50%;
+        }
+    }
+
+    &__wh-details-header {
+        margin: 0 0 1.5rem;
+    }
+
+    &__wh-details {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+
+        @include tablet {
+            margin: 0;
+        }
+    }
+
+    &__divider {
+        border: 1px solid $secondary-cloud;
+        margin: 0 -1.5rem;
+
+        @include tablet {
+            margin: 0 2rem -0.5rem;
+        }
+
+        @include desktop {
+            margin: 1rem 2.5rem -1rem;
+        }
+    }
+
+    &__contact-details-container {
+        @include tablet {
+            flex: 0 1 50%;
+        }
+    }
+
+    &__contact-details {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 0 1.5rem;
+
+        @include tablet {
+            padding: 0;
+        }
+    }
+
+    &__contact-details-header {
+        margin: 1rem 0 1.5rem;
+
+        @include tablet {
+            margin-top: 0;
+        }
+    }
+
+    &__buttons {
+        margin: 0 -1.5rem;
+        padding: 1rem 1.5rem;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        background-color: $bg-light-grey;
+
+        @include tablet {
+            margin: 0;
+            justify-content: right;
+            padding-right: 2rem;
+        }
+
+        @include desktop {
+            padding-right: 2.5rem;
+        }
+    }
+
+    &__btn {
+        padding: 0 1rem;
+        height: 2.25rem;
+        border-radius: 1.25rem;
+        border: none;
+        font-family: inherit;
+        font-size: $m-h3;
+        flex: 0 1 100%;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @include tablet {
+            padding: 0 1rem;
+            height: 2.375rem;
+            flex-basis: auto;
+        }
+
+        &--cxl {
+            background-color: $white;
+            color: $secondary-slate;
+            border: 1px solid $secondary-cloud;
+
+            &:hover {
+                border-color: $instock-indigo;
+                color: $instock-indigo;
+            }
+        }
+
+        &--submit {
+            background-color: $instock-indigo;
+            color: $white;
+
+            &:hover {
+                background-color: $bg-graphite;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}

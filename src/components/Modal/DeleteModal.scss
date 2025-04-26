@@ -42,6 +42,10 @@
         position: absolute;
         top: 1rem;
         right: 1rem;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
     
     &__heading {
@@ -91,6 +95,10 @@
             font-size: $h3;
             width: auto;
             padding: 0.5rem 1rem;
+        }
+
+        &:hover {
+            cursor: pointer;
         }
 
         &--cxl {
