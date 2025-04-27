@@ -8,6 +8,7 @@ import WarehouseDetails from './pages/WarehouseDetails/WarehouseDetails'
 import AddNewWarehouse from './pages/AddNewWarehouse'
 import EditWarehouse from './pages/EditWarehouse'
 import Inventories from './pages/Inventories/Inventories'
+import SelectField from './components/SelectField/SelectField'
 
 Modal.setAppElement("#root")
 
@@ -17,8 +18,8 @@ function App() {
       <Header />
       <main>
         <Routes>
-          {/* <Route path="/" element={<WarehouseDetails />} /> */}
-          <Route path="/" element={<Navigate to="/warehouses" />} />
+          <Route path="/" element={<SelectField label="TEST" options={["option1", "option2"]} defaultValue="Choose one..." />} />
+          {/* <Route path="/" element={<Navigate to="/warehouses" />} /> */}
           <Route path="/warehouses" element={<Warehouses />} />
           <Route path="/warehouses/:id" element={<WarehouseDetails />} />
           <Route path="/warehouses/:id/add" element={<AddNewWarehouse />} />

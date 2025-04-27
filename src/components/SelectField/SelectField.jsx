@@ -6,8 +6,6 @@ import ErrorIcon from "../../assets/icons/error-24px.svg?react";
 export default function SelectField({ label, options, defaultValue }) {
   const selectRef = useRef(null);
 
-  console.log("categoryDATA>>>>>:", options);
-
   const handleChange = (e) => {
     const errorMsg = selectRef.current.parentNode.nextElementSibling;
     if (e.target.value === "") {
@@ -30,9 +28,10 @@ export default function SelectField({ label, options, defaultValue }) {
             ref={selectRef}
             name="warehouse"
             className="select-field__input select-field__input--default"
-            value={defaultValue}
+            defaultValue=""
             onChange={handleChange}
           >
+            <option value="">--Choose one--</option>
             {options.map((category, index) => (
               <option
                 className="select-field__option"
