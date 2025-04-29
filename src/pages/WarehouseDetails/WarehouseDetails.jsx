@@ -5,10 +5,31 @@ import InventoryItem from '../../components/InventoryItem/InventoryItem'
 import SortIcon from '../../assets/icons/sort-24px.svg?react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import axios from 'axios'
+
+const API_URL = import.meta.env.VITE_APP_API_URL
 
 export default function WarehouseDetails() {
     const [warehouse, setWarehouse] = useState({})
-    const { id} = useParams()
+    const { id } = useParams()
+
+    //TODO: FETCH INVENTORY DATA FOR WAREHOUSE
+
+    useEffect(() => {
+        async function fetchWarehouse() {
+            try {
+                const response = await axios.get(`${API_URL}/warehouses/${id}`)
+                if (response.status === 200) {
+                    setWarehouse(response.data)
+                    console.log(response.data)
+                }
+            } catch (err) {
+                console.log(`Unable to retrieve data for Warehouse ${id}: ${err}`)
+            }
+        }
+
+        fetchWarehouse()
+    }, [])
 
 
     return (
@@ -17,7 +38,7 @@ export default function WarehouseDetails() {
                 <div className="wh-details__header">
                     <div className="wh-details__heading-container">
                         <ArrowBackIcon className="wh-details__arrow-back-icon" />
-                        <h1 className="wh-details__heading">Washington</h1>
+                        <h1 className="wh-details__heading">{warehouse.warehouse_name}</h1>
                     </div>
                     <div className="wh-details__edit-icon-container">
                         <EditWhiteIcon className="wh-details__edit-icon" />
@@ -28,19 +49,20 @@ export default function WarehouseDetails() {
                 <div className="wh-details__address">
                     <h4 className="wh-details__label">WAREHOUSE ADDRESS:</h4>
                     <p className="wh-details__content wh-details__content--address">
-                        33 Pearl Street SW, <span>Washington, USA</span>
+                        {warehouse.address},
+                        <span>{`${warehouse.city}, ${warehouse.country}`}</span>
                     </p>
                 </div>
                 <div className="wh-details__contact-container">
                     <div className="wh-details__contact">
                         <h4 className="wh-details__label">CONTACT NAME:</h4>
-                        <p className="wh-details__content">Graeme Lyon</p>
-                        <p className="wh-details__content">Warehouse Manager</p>
+                        <p className="wh-details__content">{warehouse.contact_name}</p>
+                        <p className="wh-details__content">{warehouse.contact_position}</p>
                     </div>
                     <div className="wh-details__contact wh-details__contact--info">
                         <h4 className="wh-details__label">CONTACT INFORMATION:</h4>
-                        <p className="wh-details__content">+1 (647) 504-0911</p>
-                        <p className="wh-details__content">glyon@instock.com</p>
+                        <p className="wh-details__content">{warehouse.contact_phone}</p>
+                        <p className="wh-details__content">{warehouse.contact_email}</p>
                     </div>
                 </div>
             </div>
