@@ -11,7 +11,7 @@ export default function DeleteModal({ isOpen, closeModal, id, name, type }) {
 
     const handleDelete = async () => {
         try {
-            //const response = await axios.delete(`${API_URL}/warehouses/${id}`)
+            const response = await axios.delete(`${API_URL}/warehouses/${id}`)
             alert(`${name} has been deleted successfully.`)
             closeModal()
         } catch (err) {
@@ -19,6 +19,7 @@ export default function DeleteModal({ isOpen, closeModal, id, name, type }) {
         }
     }
 
+    // Listen for screen width >= 768px (tablet) to apply tablet and desktop modal styling
     window.addEventListener("resize", () => setScreenWidth(window.innerWidth))
 
     return (

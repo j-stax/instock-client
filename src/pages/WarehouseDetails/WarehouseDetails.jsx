@@ -3,6 +3,7 @@ import ArrowBackIcon from '../../assets/icons/arrow_back-24px.svg?react'
 import EditWhiteIcon from '../../assets/icons/edit-white-24px.svg?react'
 import InventoryItem from '../../components/InventoryItem/InventoryItem'
 import SortIcon from '../../assets/icons/sort-24px.svg?react'
+import DeleteModal from '../../components/Modal/DeleteModal'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
@@ -11,25 +12,41 @@ const API_URL = import.meta.env.VITE_APP_API_URL
 
 export default function WarehouseDetails() {
     const [warehouse, setWarehouse] = useState({})
+    const [inventory, setInventory] = useState([])
     const { id } = useParams()
 
-    //TODO: FETCH INVENTORY DATA FOR WAREHOUSE
+    //TODO: Delete modal for warehouse inventory item
 
     useEffect(() => {
-        async function fetchWarehouse() {
-            try {
-                const response = await axios.get(`${API_URL}/warehouses/${id}`)
-                if (response.status === 200) {
-                    setWarehouse(response.data)
-                    console.log(response.data)
-                }
-            } catch (err) {
-                console.log(`Unable to retrieve data for Warehouse ${id}: ${err}`)
-            }
-        }
-
         fetchWarehouse()
+        fetchInventory()
     }, [])
+
+    const fetchWarehouse = async () => {
+        try {
+            const response = await axios.get(`${API_URL}/warehouses/${id}`)
+            if (response.status === 200) {
+                setWarehouse(response.data)
+            } else {
+                console.log(`Response returned status code ${response.status}`)
+            }
+        } catch (err) {
+            console.log(`Unable to retrieve data for Warehouse ID ${id}: ${err}`)
+        }
+    }
+
+    const fetchInventory = async () => {
+        try {
+            const response = await axios.get(`${API_URL}/warehouses/${id}/inventories`)
+            if (response.status === 200) {
+                setInventory(response.data)
+            } else {
+                console.log(`Response returned status code ${response.status}`)
+            }
+        } catch (err) {
+            console.log(`Unable to retrieve inventory data for Warehouse ID ${id}: ${err}`)
+        }
+    }
 
 
     return (
@@ -85,12 +102,16 @@ export default function WarehouseDetails() {
                 </h4>
                 <h4 className="wh-details__sort-bar-actions">ACTIONS</h4>
             </div>
-            <InventoryItem
-                item="Television"
-                status="Out of Stock"
-                category="Electronics"
-                quantity={500}
-            />
+            {inventory.map(inv => 
+                <InventoryItem
+                    key={inv.id}
+                    id={inv.id}
+                    item={inv.item_name}
+                    status={inv.status}
+                    category={inv.category}
+                    quantity={inv.quantity}
+                />
+            )}
         </div>
     )
 }
