@@ -1,17 +1,31 @@
 import './InventoryItem.scss'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import ChevronIcon from '../../assets/icons/chevron_right-24px.svg?react'
 import DeleteIcon from '../../assets/icons/delete_outline-24px.svg?react'
 import EditIcon from '../../assets/icons/edit-24px.svg?react'
+import DeleteModal from '../Modal/DeleteModal'
 
 
-export default function InventoryItem({ item, status, category, quantity }) {
+export default function InventoryItem({ id, item, status, category, quantity, fetchInventory }) {
+    const [isOpen, setIsOpen] = useState(false)
+
+    const openModal = () => setIsOpen(true)
+    const closeModal = () => setIsOpen(false)
 
     const statusStyles = status.toLowerCase() === "in stock" ? 
         "inventory-item__status" : "inventory-item__status inventory-item__status--red" 
 
     return (
         <div className="inventory-item">
+            <DeleteModal 
+                isOpen={isOpen}
+                closeModal={closeModal}
+                id={id}
+                name={item}
+                type="inventories"
+                fetchInventory={fetchInventory}
+            />
             <div className="inventory-item__mobile">
                 <div className="inventory-item__upper-container">
                     <div className="inventory-item__section">
@@ -37,8 +51,8 @@ export default function InventoryItem({ item, status, category, quantity }) {
                     </div>
                 </div>
                 <div className="inventory-item__buttons">
-                    <DeleteIcon />
-                    <EditIcon />
+                    <DeleteIcon className="inventory-item__button" onClick={openModal} />
+                    <EditIcon className="inventory-item__button" />
                 </div>
             </div>
             <div className="inventory-item__tablet">
@@ -56,8 +70,8 @@ export default function InventoryItem({ item, status, category, quantity }) {
                     <p className="inventory-item__content">{quantity}</p>
                 </div>
                 <div className="inventory-item__buttons">
-                    <DeleteIcon />
-                    <EditIcon />
+                    <DeleteIcon className="inventory-item__button" onClick={openModal} />
+                    <EditIcon className="inventory-item__button" />
                 </div>
             </div>
         </div>

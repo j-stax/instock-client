@@ -3,9 +3,8 @@ import ArrowBackIcon from '../../assets/icons/arrow_back-24px.svg?react'
 import EditWhiteIcon from '../../assets/icons/edit-white-24px.svg?react'
 import InventoryItem from '../../components/InventoryItem/InventoryItem'
 import SortIcon from '../../assets/icons/sort-24px.svg?react'
-import DeleteModal from '../../components/Modal/DeleteModal'
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const API_URL = import.meta.env.VITE_APP_API_URL
@@ -14,8 +13,7 @@ export default function WarehouseDetails() {
     const [warehouse, setWarehouse] = useState({})
     const [inventory, setInventory] = useState([])
     const { id } = useParams()
-
-    //TODO: Delete modal for warehouse inventory item
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetchWarehouse()
@@ -48,17 +46,26 @@ export default function WarehouseDetails() {
         }
     }
 
+    const goBack = (e) => {
+        e.preventDefault()
+        navigate(-1)
+    }
+
 
     return (
         <div className="wh-details">
             <div className="wh-details__header-wrapper">
                 <div className="wh-details__header">
                     <div className="wh-details__heading-container">
-                        <ArrowBackIcon className="wh-details__arrow-back-icon" />
+                        <Link to="#" className="wh-details__back-link" onClick={goBack}>
+                            <ArrowBackIcon className="wh-details__arrow-back-icon" />
+                        </Link>
                         <h1 className="wh-details__heading">{warehouse.warehouse_name}</h1>
                     </div>
                     <div className="wh-details__edit-icon-container">
-                        <EditWhiteIcon className="wh-details__edit-icon" />
+                        <Link to={`/warehouses/${id}/edit`} className="wh-details__edit-icon-link">
+                            <EditWhiteIcon className="wh-details__edit-icon" />
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -110,6 +117,7 @@ export default function WarehouseDetails() {
                     status={inv.status}
                     category={inv.category}
                     quantity={inv.quantity}
+                    fetchInventory={fetchInventory}
                 />
             )}
         </div>

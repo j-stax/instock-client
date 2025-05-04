@@ -62,8 +62,8 @@
         font-size: $m-p1;
 
         @include tablet {
-            font-size: $p1;
             padding-right: 20%;
+            font-size: $p1;
         }
     }
 

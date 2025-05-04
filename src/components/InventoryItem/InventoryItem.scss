@@ -99,7 +99,15 @@
         }
     }
 
+    &__button {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
     &__tablet {
+        display: none;
+        
         @include tablet {
             display: flex;
             align-items: center;
