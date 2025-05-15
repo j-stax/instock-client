@@ -63,7 +63,7 @@ export default function WarehouseDetails() {
                         <h1 className="wh-details__heading">{warehouse.warehouse_name}</h1>
                     </div>
                     <div className="wh-details__edit-icon-container">
-                        <Link to={`/warehouses/${id}/edit`} className="wh-details__edit-icon-link">
+                        <Link to="#" className="wh-details__edit-icon-link">
                             <EditWhiteIcon className="wh-details__edit-icon" />
                         </Link>
                     </div>

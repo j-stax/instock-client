@@ -1,6 +1,6 @@
 import './InventoryItem.scss'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import ChevronIcon from '../../assets/icons/chevron_right-24px.svg?react'
 import DeleteIcon from '../../assets/icons/delete_outline-24px.svg?react'
 import EditIcon from '../../assets/icons/edit-24px.svg?react'
@@ -9,9 +9,18 @@ import DeleteModal from '../Modal/DeleteModal'
 
 export default function InventoryItem({ id, item, status, category, quantity, fetchInventory }) {
     const [isOpen, setIsOpen] = useState(false)
+    const chevronRef = useRef(null)
 
     const openModal = () => setIsOpen(true)
     const closeModal = () => setIsOpen(false)
+
+    const handleMouseOver = () => {
+        chevronRef.current.classList.add("inventory-item__chevron--hover")
+    }
+
+    const handleMouseOut = (e) => {
+        chevronRef.current.classList.remove("inventory-item__chevron--hover")
+    }
 
     const statusStyles = status.toLowerCase() === "in stock" ? 
         "inventory-item__status" : "inventory-item__status inventory-item__status--red" 
@@ -30,9 +39,13 @@ export default function InventoryItem({ id, item, status, category, quantity, fe
                 <div className="inventory-item__upper-container">
                     <div className="inventory-item__section">
                         <h4 className="inventory-item__label">INVENTORY ITEM</h4>
-                        <Link className="inventory-item__link">
+                        <Link 
+                            className="inventory-item__link" 
+                            onMouseOver={handleMouseOver}
+                            onMouseOut={handleMouseOut}
+                        >
                             <h3 className="inventory-item__content inventory-item__content--name">{item}</h3>
-                            <ChevronIcon className="inventory-item__chevron" />
+                            <ChevronIcon className="inventory-item__chevron" ref={chevronRef} />
                         </Link>
                     </div>
                     <div className="inventory-item__section">
@@ -56,9 +69,13 @@ export default function InventoryItem({ id, item, status, category, quantity, fe
                 </div>
             </div>
             <div className="inventory-item__tablet">
-                <Link className="inventory-item__link">
+                <Link 
+                    className="inventory-item__link" 
+                    onMouseOver={handleMouseOver}
+                    onMouseOut={handleMouseOut}
+                >
                     <h3 className="inventory-item__content inventory-item__content--name">{item}</h3>
-                    <ChevronIcon className="inventory-item__chevron" />
+                    <ChevronIcon className="inventory-item__chevron" ref={chevronRef} />
                 </Link>
                 <div className="inventory-item__section">
                     <p className="inventory-item__content">{category}</p>

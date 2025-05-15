@@ -55,6 +55,14 @@
         }
     }
 
+    &__chevron {
+        transition: transform 0.3s;
+
+        &--hover {
+            @include move-animation;
+        }
+    }
+
     &__link {
         display: flex;
         align-items: center;
