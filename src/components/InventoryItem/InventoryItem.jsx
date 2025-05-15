@@ -40,6 +40,7 @@ export default function InventoryItem({ id, item, status, category, quantity, fe
                     <div className="inventory-item__section">
                         <h4 className="inventory-item__label">INVENTORY ITEM</h4>
                         <Link 
+                            to={`/inventories/${id}`}
                             className="inventory-item__link" 
                             onMouseOver={handleMouseOver}
                             onMouseOut={handleMouseOut}
@@ -70,6 +71,7 @@ export default function InventoryItem({ id, item, status, category, quantity, fe
             </div>
             <div className="inventory-item__tablet">
                 <Link 
+                    to={`/inventories/${id}`}   
                     className="inventory-item__link" 
                     onMouseOver={handleMouseOver}
                     onMouseOut={handleMouseOut}
