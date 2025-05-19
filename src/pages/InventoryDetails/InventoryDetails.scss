@@ -32,6 +32,10 @@
             padding: 2rem;
             bottom: 0;
         }
+
+        @include desktop {
+            padding: 2rem 2.5rem 1.4375rem;
+        }
     }
 
     &__return-link {
@@ -75,7 +79,7 @@
         transform: scale(0.95);
 
         @include tablet {
-            transform: scale(1.2);
+            transform: scale(1.3);
         }
     }    
 
@@ -98,8 +102,12 @@
 
         @include tablet {
             flex-direction: row;
-            padding: 1.5rem 2rem;
+            padding: 1.5rem 2rem 2rem;
             gap: 2.5rem;
+        }
+
+        @include desktop {
+            padding: 1.5rem 2.5rem 2rem;
         }
     }
 
@@ -125,6 +133,10 @@
             @include tablet {
                 width: 85%;
             }
+
+            @include desktop {
+                width: 100%;
+            }
         }
 
         &--status {
@@ -132,6 +144,20 @@
             background-color: $bg-light-grey;
             font-size: $m-h4;
             border-radius: 1.25rem;
+
+            @include tablet {
+                font-size: $h4;
+            }
+        }
+    }
+
+    &__instock {
+        &--green {
+            color: $green;
+        }
+
+        &--red {
+            color: $red;
         }
     }
 
@@ -168,4 +194,12 @@
 .bottom-margin-section {
     height: 4.375rem;
     margin: 0 -1rem;
+
+    @include tablet {
+        height: 32rem;
+    }
+
+    @include desktop {
+        height: 24.875rem;
+    }
 }

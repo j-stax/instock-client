@@ -9,7 +9,7 @@ export default function InventoryDetails() {
     const { id } = useParams()
     const navigate = useNavigate()
 
-    // TODO: USEEFFECT TO FETCH INVENTORY STOCK DETAILS + TABLET AND DESKTOP VIEWS
+    // TODO: USEEFFECT TO FETCH INVENTORY STOCK DETAILS AND CHANGE INSTOCK COLOR DYNAMICALLY
 
 
     const goBack = (e) => {
@@ -52,7 +52,7 @@ export default function InventoryDetails() {
                             <div>
                                 <h4 className="inv-details__item-label">STATUS</h4>
                                 <p 
-                                    className="inv-details__item-text inv-details__item-text--status"
+                                    className={`inv-details__item-text inv-details__item-text--status`}
                                 >IN STOCK</p>
                             </div>
                             <div>
