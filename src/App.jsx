@@ -7,7 +7,7 @@ import Warehouses from './pages/Warehouses/Warehouses'
 import WarehouseDetails from './pages/WarehouseDetails/WarehouseDetails'
 import AddNewWarehouse from './pages/AddNewWarehouse'
 import EditWarehouse from './pages/EditWarehouse'
-import Inventories from './pages/Inventories/Inventories'
+import Inventory from './pages/Inventory/Inventory'
 import InventoryDetails from './pages/InventoryDetails/InventoryDetails'
 
 Modal.setAppElement("#root")
@@ -24,8 +24,8 @@ function App() {
           <Route path="/warehouses/:id" element={<WarehouseDetails />} />
           <Route path="/warehouses/:id/add" element={<AddNewWarehouse />} />
           <Route path="/warehouses/:id/edit" element={<EditWarehouse />} />
-          <Route path="/inventories" element={<Inventories />} />
-          <Route path="/inventories/:id" element={<InventoryDetails />} />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/inventory/:id" element={<InventoryDetails />} />
         </Routes>
       </main>
       <Footer />

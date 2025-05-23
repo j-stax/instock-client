@@ -144,6 +144,8 @@
             background-color: $bg-light-grey;
             font-size: $m-h4;
             border-radius: 1.25rem;
+            text-transform: uppercase;
+            font-weight: 500;
 
             @include tablet {
                 font-size: $h4;
